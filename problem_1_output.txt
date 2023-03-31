@@ -1,0 +1,3 @@
+Variance_for_2021 is: 208.33
+Variance_for_2022 is: 100.00
+Variance_in_pct is: -52.00%

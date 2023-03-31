@@ -1,0 +1,47 @@
+
+
+
+public class Sales{
+    
+    public static void main(String[] args) {
+        
+        
+        double[] sales_for_2021 = {100.0, 100.0, 75.0};
+        double[] sales_for_2022 = {120.0, 110.0, 100.0};
+        
+        // Calculating mean of each year's sales data
+        double mean_for_2021 = calculateMean(sales_for_2021);
+        double mean_for_2022 = calculateMean(sales_for_2022);
+        
+        // Calculating the variance of each year's sales data
+        double variance_for_2021 = calculateVariance(sales_for_2021, mean_for_2021);
+        double variance_for_2022 = calculateVariance(sales_for_2022, mean_for_2022);
+        
+        // Calculating  the variance percentage between the 2021 and 2022
+        double Variance_in_pct = (variance_for_2022 - variance_for_2021) / variance_for_2021 * 100.0 ;
+        
+        
+// results are printing
+        System.out.printf("Variance_for_2021 is: %.2f\n", variance_for_2021);
+        System.out.printf("Variance_for_2022 is: %.2f\n", variance_for_2022);
+        System.out.printf("Variance_in_pct is: %.2f%%\n", Variance_in_pct);
+    }
+    
+    // Method to calculate the mean of an array 
+    public static double calculateMean(double[] data) {
+        double total = 0.0;
+        for (double d : data) {
+            total += d;
+        }
+        return total / data.length;
+    }
+    
+    // method to calculate the variance of an array 
+    public static double calculateVariance(double[] data, double mean) {
+        double total_Squares = 0.0;
+        for (double d : data) {
+            total_Squares += (d - mean) * (d - mean);
+        }
+        return total_Squares / (data.length - 1);
+    }
+}
